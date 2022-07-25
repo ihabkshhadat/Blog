@@ -1,0 +1,26 @@
+<div class="col-lg-4 mb-4">
+  <div class="card border-0 shadow-sm mb-2">
+    <% if blog.header_image.attached?  %>
+      <%= image_tag blog.header_image, :class=>"card-img-top mb-2" %>
+    <% end %>
+    <div class="card-body bg-light text-center p-4">
+      <h4 class=""><%= blog.title %></h4>
+      <div class="d-flex justify-content-center mb-3">
+        <small class="mr-3"
+        ><i class="fa fa-user text-primary"></i> Admin</small
+        >
+        <small class="mr-3"
+        ><i class="fa fa-folder text-primary"></i> Web Design</small
+        >
+        <small class="mr-3"
+        ><i class="fa fa-comments text-primary"></i> 15</small
+        >
+      </div>
+      <p>
+        <%= blog.content.truncate(300, :separator => ' ') %>
+      </p>
+      <%= link_to "Read More", blog,class:"btn btn-primary px-4 mx-auto my-2" %>
+
+    </div>
+  </div>
+</div>

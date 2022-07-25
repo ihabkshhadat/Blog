@@ -1,0 +1,27 @@
+
+<div class="container">
+
+  <div class="table-responsive">
+    <table class="table">
+      <caption>List of blog</caption>
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">title</th>
+        <th scope="col">content</th>
+        <th scope="col">image</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @blogs.each do |blog|%>
+        <tr>
+          <th scope="row"><%=blog.id %></th>
+          <td><%=blog.title %></td>
+          <td><%=blog.content %></td>
+          <td><%= if blog.header_image.attached? then link_to('Path',blog.header_image  ) else 'None' end%></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
